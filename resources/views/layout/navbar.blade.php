@@ -21,13 +21,13 @@
             <div class="offcanvas-body">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item active" id="btn-nav-inicio">
-                        <a class="nav-link" href="./" style="color: #000000;">Inicio</a>
+                        <a class="nav-link" href="{{ route('main') }}" style="color: #000000;">Inicio</a>
                     </li>
                     <li class="nav-item" id="btn-nav-anotadores">
-                        <a class="nav-link" href="#" style="color: #000000;">Anotadores</a>
+                        <a class="nav-link" href="{{ route('notes') }}" style="color: #000000;">Anotadores</a>
                     </li>
                     <li class="nav-item" id="btn-nav-habtracker">
-                        <a class="nav-link" href="#" style="color: #000000;">Habit Tracker</a>
+                        <a class="nav-link" href="{{ route('habit-tracker') }}" style="color: #000000;">Habit Tracker</a>
                     </li>
                     @auth
                     <li class="nav-item" id="btn-nav-logout">
