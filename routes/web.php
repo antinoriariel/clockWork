@@ -2,9 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PrincipalController;
-use App\Http\Controllers\LoginController;
+use App\Http\Controllers\AuthController;
 
 Route::get('/', [PrincipalController::class, 'main'])->name('main');
-Route::get('/login', [LoginController::class, 'index'])->name('login');
-Route::post('/login', [LoginController::class, 'authenticate'])->name('login.post');
-Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+Route::get('/login', [AuthController::class, 'index'])->name('login');
+Route::post('/login', [AuthController::class, 'authenticate'])->name('login.post');
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
