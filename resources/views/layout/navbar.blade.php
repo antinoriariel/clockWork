@@ -21,25 +21,37 @@
             <div class="offcanvas-body">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item mx-1" id="btn-nav-inicio">
-                        <a class="nav-link" href="{{ route('main') }}" style="color: #000000; {{ request()->routeIs('main') ? 'background-color: #000000ff; border-radius: 10px; color: #ffffff;' : '' }}">Inicio</a>
+                        <a class="nav-link" href="{{ route('main') }}" style="color: #000000; {{ request()->routeIs('main') ? 'background-color: #000000ff; border-radius: 10px; color: #ffffff;' : '' }}">
+                            <i class="bi bi-house-door me-1"></i> Inicio
+                        </a>
                     </li>
                     <li class="nav-item mx-1" id="btn-nav-anotadores">
-                        <a class="nav-link" href="{{ route('notes') }}" style="color: #000000; {{ request()->routeIs('notes') ? 'background-color: #000000ff; border-radius: 10px; color: #ffffff;' : '' }}">Anotadores</a>
+                        <a class="nav-link" href="{{ route('notes') }}" style="color: #000000; {{ request()->routeIs('notes') ? 'background-color: #000000ff; border-radius: 10px; color: #ffffff;' : '' }}">
+                            <i class="bi bi-journal-text me-1"></i> Anotadores
+                        </a>
                     </li>
                     <li class="nav-item mx-1" id="btn-nav-habtracker">
-                        <a class="nav-link" href="{{ route('habit-tracker') }}" style="color: #000000; {{ request()->routeIs('habit-tracker') ? 'background-color: #000000ff; border-radius: 10px; color: #ffffff;' : '' }}">Habit Tracker</a>
+                        <a class="nav-link" href="{{ route('habit-tracker') }}" style="color: #000000; {{ request()->routeIs('habit-tracker') ? 'background-color: #000000ff; border-radius: 10px; color: #ffffff;' : '' }}">
+                            <i class="bi bi-check2-square me-1"></i> Habitos
+                        </a>
                     </li>
                     @auth
                     <li class="nav-item mx-1" id="btn-nav-logout">
                         <a class="nav-link" href="{{ route('logout') }}" style="color: #000000;"
-                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                            Salir
+                           onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                            <i class="bi bi-box-arrow-right me-1"></i> Salir
                         </a>
                     </li>
 
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                         @csrf
                     </form>
+                    @else
+                    <li class="nav-item mx-1" id="btn-nav-login">
+                        <a class="nav-link" href="{{ route('login') }}" style="color: #000000;">
+                            <i class="bi bi-box-arrow-in-right me-1"></i> Login
+                        </a>
+                    </li>
                     @endauth
                 </ul>
             </div>
