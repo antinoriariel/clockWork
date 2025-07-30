@@ -20,30 +20,31 @@
             </div>
             <div class="offcanvas-body">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item active" id="btn-nav-inicio">
-                        <a class="nav-link" href="{{ route('main') }}" style="color: #000000;">Inicio</a>
+                    <li class="nav-item mx-1" id="btn-nav-inicio">
+                        <a class="nav-link" href="{{ route('main') }}" style="color: #000000; {{ request()->routeIs('main') ? 'background-color: #000000ff; border-radius: 10px; color: #ffffff;' : '' }}">Inicio</a>
                     </li>
-                    <li class="nav-item" id="btn-nav-anotadores">
-                        <a class="nav-link" href="{{ route('notes') }}" style="color: #000000;">Anotadores</a>
+                    <li class="nav-item mx-1" id="btn-nav-anotadores">
+                        <a class="nav-link" href="{{ route('notes') }}" style="color: #000000; {{ request()->routeIs('notes') ? 'background-color: #000000ff; border-radius: 10px; color: #ffffff;' : '' }}">Anotadores</a>
                     </li>
-                    <li class="nav-item" id="btn-nav-habtracker">
-                        <a class="nav-link" href="{{ route('habit-tracker') }}" style="color: #000000;">Habit Tracker</a>
+                    <li class="nav-item mx-1" id="btn-nav-habtracker">
+                        <a class="nav-link" href="{{ route('habit-tracker') }}" style="color: #000000; {{ request()->routeIs('habit-tracker') ? 'background-color: #000000ff; border-radius: 10px; color: #ffffff;' : '' }}">Habit Tracker</a>
                     </li>
                     @auth
-                    <li class="nav-item" id="btn-nav-logout">
+                    <li class="nav-item mx-1" id="btn-nav-logout">
                         <a class="nav-link" href="{{ route('logout') }}" style="color: #000000;"
                         onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                             Salir
                         </a>
-                        </li>
-                        
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                            @csrf
-                        </form>
+                    </li>
+
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
                     @endauth
                 </ul>
             </div>
         </div>
     </div>
 </nav>
+
 
