@@ -20,17 +20,17 @@
             </div>
             <div class="offcanvas-body">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
+                    <li class="nav-item active" id="btn-nav-inicio">
                         <a class="nav-link" href="#" style="color: #000000;">Inicio</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" style="color: #000000;">Reservas</a>
+                    <li class="nav-item" id="btn-nav-anotadores">
+                        <a class="nav-link" href="#" style="color: #000000;">Anotadores</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" style="color: #000000;">Perfil</a>
+                    <li class="nav-item" id="btn-nav-habtracker">
+                        <a class="nav-link" href="#" style="color: #000000;">Habit Tracker</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" style="color: #000000;">Cerrar Sesión</a>
+                    <li class="nav-item" id="btn-nav-logout">
+                        <a class="nav-link" href="#" style="color: #000000;">Salir</a>
                     </li>
                 </ul>
             </div>
