@@ -23,6 +23,12 @@
                     <input type="password" class="form-control rounded-3 border-0 shadow-sm px-3 py-2"
                         style="background-color: #F6F6F6; color: #000000;" id="password" name="password" required>
                 </div>
+
+                @if ($errors->has('username'))
+                    <div class="text-danger small mb-2">{{ $errors->first('username') }}</div>
+                @endif
+
+
                 <button type="submit" class="btn rounded-3 w-100 mt-3 fw-bold"
                     style="background-color: #000000; color: #FFFFFF; padding: 12px;">
                     Iniciar Sesión

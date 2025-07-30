@@ -14,4 +14,26 @@ CREATE TABLE users (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
+
+insercion
+
+INSERT INTO users (
+    name,
+    surname,
+    username,
+    email,
+    email_verified_at,
+    password,
+    created_at,
+    updated_at
+) VALUES (
+    'Ariel',
+    'Antinori',
+    'antinori',
+    'antinori@example.com',
+    NULL, -- No verificado aún
+    '$2y$12$.z1PlwZpnJw1nOe1M5H/qO5ztu/etrqJMTpkCzc7kQ.S59HIPknba', -- hash bcrypt de 'password'
+    NOW(),
+    NOW()
+);
 ```

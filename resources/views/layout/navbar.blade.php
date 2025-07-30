@@ -29,9 +29,18 @@
                     <li class="nav-item" id="btn-nav-habtracker">
                         <a class="nav-link" href="#" style="color: #000000;">Habit Tracker</a>
                     </li>
+                    @auth
                     <li class="nav-item" id="btn-nav-logout">
-                        <a class="nav-link" href="#" style="color: #000000;">Salir</a>
-                    </li>
+                        <a class="nav-link" href="{{ route('logout') }}" style="color: #000000;"
+                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                            Salir
+                        </a>
+                        </li>
+                        
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                    @endauth
                 </ul>
             </div>
         </div>
