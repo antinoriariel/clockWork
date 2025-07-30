@@ -19,7 +19,9 @@
 </head>
 <body>
     <!-- Barra de navegación -->
-    @include('layout.navbar')
+    @unless (isset($hideNavbar) && $hideNavbar)
+        @include('layout.navbar')
+    @endunless
 
     <!-- Contenido principal -->
     <div class="container">
@@ -27,7 +29,10 @@
     </div>
 
     <!-- Footer -->
-    @include('layout.footer')
+    @unless (isset($hideFooter) && $hideFooter)
+        @include('layout.footer')
+    @endunless
+
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 </body>

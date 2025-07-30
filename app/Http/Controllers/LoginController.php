@@ -10,6 +10,10 @@ class LoginController extends Controller
     {
         // Variable del título para la vista
         $title = 'ClockWork - Login';
-        return view('login', compact('title'));
+
+        // Ocultar la barra de navegación y el pie de página
+        $hideNavbar = true;
+        $hideFooter = true;
+        return view('login', compact('title', 'hideNavbar', 'hideFooter'));
     }
 }
