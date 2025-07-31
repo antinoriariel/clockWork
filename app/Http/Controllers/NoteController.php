@@ -11,8 +11,9 @@ class NoteController extends Controller
         if (!auth()->check()) {
             return redirect()->route('login');
         }
+        
         return view('notes', [
-            'title' => 'ClockWork - Notes',
+            'title' => 'ClockWork - Notas',
             'hideNavbar' => false,
             'hideFooter' => false,
         ]);
