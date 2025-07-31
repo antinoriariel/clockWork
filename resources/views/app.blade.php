@@ -26,6 +26,11 @@
         @include('layout.navbar')
     @endunless
 
+    <!-- Sidebar -->
+    @unless (isset($hideSidebar) && $hideSidebar)
+        @include('layout.sidebar')
+    @endunless
+
     <!-- Contenido principal -->
     <div class="container">
         @yield('content')

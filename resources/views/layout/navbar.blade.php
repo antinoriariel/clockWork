@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-sm navbar-light bg-white shadow-sm px-3">
+<nav class="navbar navbar-expand-sm navbar-light bg-white shadow-sm px-3 fixed-top">
     <div class="container-fluid">
         <!-- Logo / Nombre -->
         <a class="navbar-brand fw-bold" href="#" style="color: #000000;">
@@ -35,28 +35,8 @@
                             <i class="bi bi-check2-square me-1"></i> Habitos
                         </a>
                     </li>
-                    @auth
-                    <li class="nav-item mx-1" id="btn-nav-logout">
-                        <a class="nav-link" href="{{ route('logout') }}" style="color: #000000;"
-                           onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                            <i class="bi bi-box-arrow-right me-1"></i> Salir
-                        </a>
-                    </li>
-
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                        @csrf
-                    </form>
-                    @else
-                    <li class="nav-item mx-1" id="btn-nav-login">
-                        <a class="nav-link" href="{{ route('login') }}" style="color: #000000;">
-                            <i class="bi bi-box-arrow-in-right me-1"></i> Login
-                        </a>
-                    </li>
-                    @endauth
                 </ul>
             </div>
         </div>
     </div>
 </nav>
-
-

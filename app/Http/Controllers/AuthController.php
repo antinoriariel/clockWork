@@ -12,7 +12,8 @@ class AuthController extends Controller
         $title = 'ClockWork - Login';
         $hideNavbar = true;
         $hideFooter = true;
-        return view('login', compact('title', 'hideNavbar', 'hideFooter'));
+        $hideSidebar = true;
+        return view('login', compact('title', 'hideNavbar', 'hideFooter', 'hideSidebar'));
     }
 
     public function authenticate(Request $request)
