@@ -10,22 +10,35 @@
     </div>
 
     <!-- Time of Day -->
+    @php
+      date_default_timezone_set('America/Argentina/Buenos_Aires');
+      $hour = date('H');
+    @endphp
     <div class="mb-2 text-uppercase small text-secondary">Hora del día</div>
     <ul class="nav flex-column mb-3">
       <li class="nav-item">
-        <a href="#" class="nav-link text-dark d-flex align-items-center">
-          <i class="bi bi-sun me-2"></i> Mañana <span class="badge bg-primary ms-auto">ahora</span>
-        </a>
+      <a href="#" class="nav-link text-dark d-flex align-items-center">
+        <i class="bi bi-sun me-2"></i> Mañana 
+        @if ($hour < 12)
+        <span class="badge bg-primary ms-auto">ahora</span>
+        @endif
+      </a>
       </li>
       <li class="nav-item">
-        <a href="#" class="nav-link text-dark d-flex align-items-center">
-          <i class="bi bi-brightness-alt-high me-2"></i> Tarde
-        </a>
+      <a href="#" class="nav-link text-dark d-flex align-items-center">
+        <i class="bi bi-brightness-alt-high me-2"></i> Tarde 
+        @if ($hour >= 12 && $hour < 19)
+        <span class="badge bg-primary ms-auto">ahora</span>
+        @endif
+      </a>
       </li>
       <li class="nav-item">
-        <a href="#" class="nav-link text-dark d-flex align-items-center">
-          <i class="bi bi-moon-stars me-2"></i> Noche
-        </a>
+      <a href="#" class="nav-link text-dark d-flex align-items-center">
+        <i class="bi bi-moon-stars me-2"></i> Noche 
+        @if ($hour >= 19)
+        <span class="badge bg-primary ms-auto">ahora</span>
+        @endif
+      </a>
       </li>
     </ul>
 
